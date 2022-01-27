@@ -28,11 +28,9 @@ const Sunset: React.FC = () => {
 
     const onSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
-        console.log(event.target);
         const target = event.target as typeof event.target & {
             numberBuildings: { value: number };
         }
-        console.log(target.numberBuildings.value);
         
         const numberOfBuildings = Number(target.numberBuildings.value);
         
@@ -88,22 +86,22 @@ const Sunset: React.FC = () => {
 
     return (
         <div className="root">
-            <div className='sun'></div>
-            <div className="scroll-container">
-                <form onSubmit={onSubmit}>
-                    <p style={{ color: 'white' } }>Buildings: {sliderValue}</p>
-                    <input className="slider" name='numberBuildings' type='range' min={3} max={9} value={sliderValue} onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setSliderValue(parseInt(e.target.value))} />
-                    <button type='submit'>GO!</button>
+            <div className='sun' data-cy='sun' data-testid='sun'></div>
+            <div data-cy='scroll-container'>
+                <form className="scroll-container" onSubmit={onSubmit} data-testid='submit-form'>
+                    <p className='scroll-text' style={{ color: 'white' } }>Buildings: {sliderValue}</p>
+                    <input className="slider" data-cy='scroll-input' data-testid='scroll-input' name='numberBuildings' type='range' min={3} max={9} value={sliderValue} onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setSliderValue(parseInt(e.target.value))} />
+                    <button type='submit' data-testid='scroll-submit' data-cy='scroll-submit' className='submit-button'>GO!</button>
                 </form>
             </div>
-            <div className='city'>
+            <div className='city' data-cy='city'>
                 {buildingArray.map((building, index) => (
                     <div key={index}>
-                        <div className={`building ${building.sunset} ${floorsArray[building.height - 1]}`}></div>
+                        <div data-testid={`building-${index}`} className={`building ${building.sunset} ${floorsArray[building.height - 1]}`}></div>
                         {building.height === 1 ? <p>{building.height} story</p> : <p>{building.height} stories</p>}
                         <div className='height-input-div'>
-                            <button className="increase-decrease-button" onClick={() => smallerBuilding(index)} disabled={building.height === 1}>-</button>
-                            <button className="increase-decrease-button" onClick={() => biggerBuilding(index)} disabled={building.height === 10}>+</button>
+                            <button data-cy={`${index}-button-decrease`} className="increase-decrease-button" onClick={() => smallerBuilding(index)} disabled={building.height === 1}>-</button>
+                            <button data-cy={`${index}-button-increase`} className="increase-decrease-button" onClick={() => biggerBuilding(index)} disabled={building.height === 10}>+</button>
                         </div>
                     </div>
                     ))}
