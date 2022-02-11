@@ -96,9 +96,9 @@ const Sunset: React.FC = () => {
             </div>
             <div className='city' data-cy='city'>
                 {buildingArray.map((building, index) => (
-                    <div key={index}>
+                    <div key={index} >
                         <div data-testid={`building-${index}`} className={`building ${building.sunset} ${floorsArray[building.height - 1]}`}></div>
-                        {building.height === 1 ? <p>{building.height} story</p> : <p>{building.height} stories</p>}
+                        <div className="story-text">{building.height === 1 ? <p>{building.height} story</p> : <p>{building.height} stories</p>}</div>
                         <div className='height-input-div'>
                             <button data-cy={`${index}-button-decrease`} className="increase-decrease-button" onClick={() => smallerBuilding(index)} disabled={building.height === 1}>-</button>
                             <button data-cy={`${index}-button-increase`} className="increase-decrease-button" onClick={() => biggerBuilding(index)} disabled={building.height === 10}>+</button>

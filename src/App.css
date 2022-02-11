@@ -13,7 +13,7 @@ html, body {
 }
 
 .root {
-  width: 70vw;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -36,19 +36,22 @@ html, body {
 }
 
 .city {
+  margin: 0 auto;
 	display: flex;
 	justify-content: space-around;
 	align-items: flex-end;
-	width: 100%;
-	height: 100%;
+	width: 60%;
+  height: 100%;
 	padding-right: 1rem;
+  font-size: 1.3vw;
+  text-align:start;
 }
 
 .building {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	margin-right: 2rem;
+  margin-right: 1.5vw;
 	height: 100%;
   width: 100%;
 	z-index: 2;
@@ -87,6 +90,7 @@ html, body {
   background-color: #ff4e27;
   border-radius: 25%;
   border-color: #ffd427;
+  font-size: 1.5vw;
 }
 
 .submit-button:hover{
@@ -97,89 +101,88 @@ html, body {
 .height-input-div{
   display: flex;
   flex-flow: row nowrap;
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  padding: 3px;
+  margin-bottom: 15px;
 }
 
 .increase-decrease-button {
   width: 40%;
-  height: 20px;
   background-color: #ff4e27;
-  border-radius: 50%;
+  border-radius: 6px;
   border-color: #000;
   color: white;
 }
-
 .increase-decrease-button:hover {
   box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
 .bar-1 {
- width: 40px;
+ width: 3.8vw;
  height: 30px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-2 {
- width: 40px;
+ width: 3.8vw;
  height: 60px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-3 {
- width: 40px;
+ width: 3.8vw;
  height: 90px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-4 {
- width: 40px;
+ width: 3.8vw;
  height: 120px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-5 {
- width: 40px;
+ width: 3.8vw;
  height: 150px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-6 {
- width: 40px;
+ width: 3.8vw;
  height: 180px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-7 {
- width: 40px;
+ width: 3.8vw;
  height: 210px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-8 {
- width: 40px;
+ width: 3.8vw;
  height: 240px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-9 {
- width: 40px;
+ width: 3.8vw;
  height: 270px;
  flex-flow: column;
  border-top-right-radius: 10%;
  border-top-left-radius: 10%;
 }
 .bar-10 {
- width: 40px;
+ width: 3.8vw;
  height: 300px;
  flex-flow: column;
  border-top-right-radius: 10%;
